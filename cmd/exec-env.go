@@ -23,8 +23,8 @@ var (
 	deletePrivateKeyAfterUse bool
 )
 
-var decryptCmd = &cobra.Command{
-	Use:   "decrypt",
+var execEnvCmd = &cobra.Command{
+	Use:   "exec-env",
 	Short: "",
 	Long:  "",
 	RunE: func(cmd *cobra.Command, args []string) error {
@@ -54,11 +54,11 @@ var decryptCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(decryptCmd)
-	decryptCmd.Flags().StringVarP(&fileParam, "file", "f", "", "the secrets file to read (required)")
-	_ = decryptCmd.MarkFlagRequired("file")
-	decryptCmd.Flags().StringVarP(&keyFileParam, "key", "k", "", "the private key file to read")
-	decryptCmd.Flags().BoolVarP(&deletePrivateKeyAfterUse, "delete-private-key-after-use", "d", false, "deletes the private key locally after use")
+	rootCmd.AddCommand(execEnvCmd)
+	execEnvCmd.Flags().StringVarP(&fileParam, "file", "f", "", "the secrets file to read (required)")
+	_ = execEnvCmd.MarkFlagRequired("file")
+	execEnvCmd.Flags().StringVarP(&keyFileParam, "key", "k", "", "the private key file to read")
+	execEnvCmd.Flags().BoolVarP(&deletePrivateKeyAfterUse, "delete-private-key-after-use", "d", false, "deletes the private key locally after use")
 }
 
 func execEnv(ctx context.Context, kmsClient *kms.Client, filePath string, keyFile string, deletePrivateKeyAfterUse bool, command ...string) error {
