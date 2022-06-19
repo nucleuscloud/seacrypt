@@ -18,6 +18,8 @@ The secrets file must be a flat json file like so:
 
 ### Usage
 
+You must have a configured AWS config prior to running this command.
+
 The following example decrypt keys and then prints out the environment
 ```sh
 make build
