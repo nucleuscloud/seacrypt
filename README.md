@@ -12,7 +12,7 @@ The keyfile must contain the plaintext contents of the KMS Key Id.
 The secrets file must be a flat json file like so:
 ```json
 {
-  MY_KEY: "<base64 encoded encrypted secret>"
+  "MY_KEY": "<base64 encoded encrypted secret>"
 }
 ```
 
