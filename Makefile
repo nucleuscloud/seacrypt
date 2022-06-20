@@ -14,10 +14,10 @@ build:
 .PHONY: build
 
 build-release:
-	env GOOS=darwin GOARCH=amd64 $(GO) build -o bin/seacrypt_darwin_amd64
-	env GOOS=darwin GOARCH=arm64 $(GO) build -o bin/seacrypt_darwin_arm64
-	env GOOS=linux GOARCH=amd64 $(GO) build -o bin/seacrypt_linux_amd64
-	env GOOS=linux GOARCH=arm64 $(GO) build -o bin/seacrypt_linux_arm64
+	env GOOS=darwin GOARCH=amd64 $(GO) build -o bin/seacrypt_darwin_amd64 cmd/*.go
+	env GOOS=darwin GOARCH=arm64 $(GO) build -o bin/seacrypt_darwin_arm64 cmd/*.go
+	env GOOS=linux GOARCH=amd64 $(GO) build -o bin/seacrypt_linux_amd64 cmd/*.go
+	env GOOS=linux GOARCH=arm64 $(GO) build -o bin/seacrypt_linux_arm64 cmd/*.go
 	sha256sum bin/* >> bin/SHA256SUMS
 .PHONY: build-release
 
