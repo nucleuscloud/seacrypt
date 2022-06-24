@@ -22,10 +22,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Granting private modules access
-        run: |
-          git config --global url."https://${{ secrets.REPO_PAT }}:x-oauth-basic@github.com/nucleuscloud".insteadOf "https://github.com/nucleuscloud"
-
       - name: Fetch all tags
         run: git fetch --force --tags
 
