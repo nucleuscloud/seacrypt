@@ -6,6 +6,9 @@ on:
     tags:
       - '*'
 
+env:
+  GITHUB_TOKEN: ${{ secrets.REPO_PATH }}
+
 permissions:
   contents: write
 
