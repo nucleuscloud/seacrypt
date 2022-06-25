@@ -27,3 +27,18 @@ make build
 ```
 
 Pass `-d` to remove the key from disk afterwards.
+
+# Installation
+## Homebrew
+You can install seacrypt directly with homebrew
+
+```sh
+brew install nucleuscloud/tap/seacrypt
+```
+
+## Source
+Ensure you have `go` installed.
+```sh
+make
+./bin/seacrypt
+```
